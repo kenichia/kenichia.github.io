@@ -10,22 +10,7 @@
             "content": [
                 {
                     "format": "M3U8",
-                    "url": "http://kenichia.github.io/hls/video.m3u8",
-                    "language": "en"
-                }
-            ]
-        },
-		{
-            "id": "test",
-            "title": "DRM test",
-            "description": "DRM",
-            "categories": "action, sci-fi, demo",
-            "keywords": "List, of, comma, separated, keywords",
-            "isLive": false,
-            "content": [
-                {
-                    "format": "M3U8",
-                    "url": "http://kenichia.github.io/hls-drm/video.m3u8",
+                    "url": "https://kenichia.github.io/hls/video.m3u8",
                     "language": "en"
                 }
             ]
