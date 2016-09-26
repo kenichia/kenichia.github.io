@@ -2,8 +2,8 @@
     "entries": [
 		{
             "id": "test",
-            "title": "DRM test",
-            "description": "NO DRM",
+            "title": "No DRM",
+            "description": "DRM OFF",
             "categories": "action, sci-fi, demo",
             "keywords": "List, of, comma, separated, keywords",
             "isLive": false,
@@ -11,6 +11,21 @@
                 {
                     "format": "M3U8",
                     "url": "https://kenichia.github.io/hls/video.m3u8",
+                    "language": "en"
+                }
+            ]
+        },
+		{
+            "id": "test",
+            "title": "DRM enctrypted",
+            "description": "DRM ON",
+            "categories": "action, sci-fi, demo",
+            "keywords": "List, of, comma, separated, keywords",
+            "isLive": false,
+            "content": [
+                {
+                    "format": "M3U8",
+                    "url": "https://kenichia.github.io/hls-drm/video.m3u8",
                     "language": "en"
                 }
             ]
