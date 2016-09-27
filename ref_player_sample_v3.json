@@ -29,6 +29,21 @@
                     "language": "en"
                 }
             ]
+        },
+		{
+            "id": "test",
+            "title": "DRM enctrypted with policy",
+            "description": "DRM ON",
+            "categories": "action, sci-fi, demo",
+            "keywords": "List, of, comma, separated, keywords",
+            "isLive": false,
+            "content": [
+                {
+                    "format": "M3U8",
+                    "url": "https://kenichia.github.io/hls-drm-policy/video.m3u8",
+                    "language": "en"
+                }
+            ]
         }
     ]
 }
