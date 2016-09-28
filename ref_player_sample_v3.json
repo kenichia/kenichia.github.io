@@ -74,6 +74,36 @@
                     "language": "en"
                 }
             ]
+        },
+		{
+            "id": "test",
+            "title": "DRM enctrypted with policy=NO_PLAYBACK(herb)",
+            "description": "DRM ON",
+            "categories": "action, sci-fi, demo",
+            "keywords": "List, of, comma, separated, keywords",
+            "isLive": false,
+            "content": [
+                {
+                    "format": "M3U8",
+                    "url": "http://herb.corp.adobe.com/HTTP/H264/_CHIVES_5.0/op/a1off_d4noplay/sample.mp4.m3u8",
+                    "language": "en"
+                }
+            ]
+        },
+		{
+            "id": "test",
+            "title": "DRM enctrypted with policy=REQUIRED(herb)",
+            "description": "DRM ON",
+            "categories": "action, sci-fi, demo",
+            "keywords": "List, of, comma, separated, keywords",
+            "isLive": false,
+            "content": [
+                {
+                    "format": "M3U8",
+                    "url": "http://herb.corp.adobe.com/HTTP/H264/_CHIVES_5.0/op/a1off_d3required/sample.mp4.m3u8",
+                    "language": "en"
+                }
+            ]
         }
     ]
 }
