@@ -55,7 +55,7 @@
             "content": [
                 {
                     "format": "M3U8",
-                    "url": "https://kenichia.github.io/hls-drm-policy-noplayback/video.m3u8",
+                    "url": "https://kenichia.github.io/hls-drm-policy-noplayback2/video.m3u8",
                     "language": "en"
                 }
             ]
@@ -70,7 +70,7 @@
             "content": [
                 {
                     "format": "M3U8",
-                    "url": "https://kenichia.github.io/hls-drm-policy-required/video.m3u8",
+                    "url": "https://kenichia.github.io/hls-drm-policy-required2/video.m3u8",
                     "language": "en"
                 }
             ]
