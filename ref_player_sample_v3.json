@@ -15,51 +15,6 @@
                 }
             ]
         },
-		{
-            "id": "test",
-            "title": "DRM enctrypted (old)",
-            "description": "DRM ON",
-            "categories": "action, sci-fi, demo",
-            "keywords": "List, of, comma, separated, keywords",
-            "isLive": false,
-            "content": [
-                {
-                    "format": "M3U8",
-                    "url": "https://kenichia.github.io/hls-drm/video.m3u8",
-                    "language": "en"
-                }
-            ]
-        },
-		{
-            "id": "test",
-            "title": "DRM enctrypted with policy=NO_PLAYBACK (old)",
-            "description": "DRM ON",
-            "categories": "action, sci-fi, demo",
-            "keywords": "List, of, comma, separated, keywords",
-            "isLive": false,
-            "content": [
-                {
-                    "format": "M3U8",
-                    "url": "https://kenichia.github.io/hls-drm-policy/video.m3u8",
-                    "language": "en"
-                }
-            ]
-        },
-		{
-            "id": "test",
-            "title": "DRM enctrypted",
-            "description": "DRM ON",
-            "categories": "action, sci-fi, demo",
-            "keywords": "List, of, comma, separated, keywords",
-            "isLive": false,
-            "content": [
-                {
-                    "format": "M3U8",
-                    "url": "https://kenichia.github.io/hls-drm2/video.m3u8",
-                    "language": "en"
-                }
-            ]
-        },
         {
             "id": "test",
             "title": "DRM enctrypted with policy=NO_PLAYBACK",
@@ -70,7 +25,7 @@
             "content": [
                 {
                     "format": "M3U8",
-                    "url": "https://kenichia.github.io/hls-drm-policy-noplayback2/video.m3u8",
+                    "url": "https://kenichia.github.io/hls-drm-policy-noplayback/video.m3u8",
                     "language": "en"
                 }
             ]
@@ -85,7 +40,7 @@
             "content": [
                 {
                     "format": "M3U8",
-                    "url": "https://kenichia.github.io/hls-drm-policy-required2/video.m3u8",
+                    "url": "https://kenichia.github.io/hls-drm-policy-required/video.m3u8",
                     "language": "en"
                 }
             ]
