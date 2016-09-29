@@ -17,6 +17,21 @@
         },
         {
             "id": "test",
+            "title": "DRM enctrypted",
+            "description": "DRM ON",
+            "categories": "action, sci-fi, demo",
+            "keywords": "List, of, comma, separated, keywords",
+            "isLive": false,
+            "content": [
+                {
+                    "format": "M3U8",
+                    "url": "https://kenichia.github.io/hls-drm/video.m3u8",
+                    "language": "en"
+                }
+            ]
+        },
+        {
+            "id": "test",
             "title": "DRM enctrypted with policy=NO_PLAYBACK",
             "description": "DRM ON",
             "categories": "action, sci-fi, demo",
@@ -41,36 +56,6 @@
                 {
                     "format": "M3U8",
                     "url": "https://kenichia.github.io/hls-drm-policy-required/video.m3u8",
-                    "language": "en"
-                }
-            ]
-        },
-        {
-            "id": "test",
-            "title": "DRM enctrypted with policy=NO_PLAYBACK(new)",
-            "description": "DRM ON",
-            "categories": "action, sci-fi, demo",
-            "keywords": "List, of, comma, separated, keywords",
-            "isLive": false,
-            "content": [
-                {
-                    "format": "M3U8",
-                    "url": "https://kenichia.github.io/hls-drm-policy-noplayback3/video.m3u8",
-                    "language": "en"
-                }
-            ]
-        },
-		{
-            "id": "test",
-            "title": "DRM enctrypted with policy=REQUIRED(new)",
-            "description": "DRM ON",
-            "categories": "action, sci-fi, demo",
-            "keywords": "List, of, comma, separated, keywords",
-            "isLive": false,
-            "content": [
-                {
-                    "format": "M3U8",
-                    "url": "https://kenichia.github.io/hls-drm-policy-required3/video.m3u8",
                     "language": "en"
                 }
             ]
