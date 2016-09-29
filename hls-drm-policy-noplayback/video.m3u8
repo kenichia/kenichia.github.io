@@ -4,7 +4,7 @@
 #EXT-X-PLAYLIST-TYPE:VOD
 #EXT-X-FAXS-CM:URI="video.drm"
 
-#EXT-X-KEY:METHOD=AES-128,URI="https://access.adobeprimetime.com:443/faxsks/axs_prod/key",IV=0x601805071cdda1de50c129bbf0f24d0b
+#EXT-X-KEY:METHOD=AES-128,URI="faxs://faxs.adobe.com",IV=0x601805071cdda1de50c129bbf0f24d0b
 #EXT-X-MEDIA-TIME:0.0
 #EXTINF:5.172,
 video.0.ts
