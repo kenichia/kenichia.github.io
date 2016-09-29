@@ -104,7 +104,8 @@
                     "language": "en"
                 }
             ]
-        }		{
+        },
+        {
             "id": "test",
             "title": "DRM enctrypted with policy=NO_PLAYBACK(herb)",
             "description": "DRM ON",
