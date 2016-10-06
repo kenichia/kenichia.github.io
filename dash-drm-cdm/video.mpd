@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><MPD xmlns="urn:mpeg:dash:schema:mpd:2011" xmlns:access="urn:adobe:aaxs-dash:2015" xmlns:cenc="urn:mpeg:cenc:2013" xmlns:scte35="urn:scte:scte35:2013" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" mediaPresentationDuration="PT160S" minBufferTime="PT4S" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="static" xsi:schemaLocation="urn:mpeg:dash:schema:mpd:2011 DASH-MPD.xsd">
+  <Period id="1" start="PT0S">
+    <AdaptationSet bitstreamSwitching="true" contentType="video" id="1" mimeType="video/mp4" segmentAlignment="true" startWithSAP="1">
+      <ContentProtection cenc:default_KID="7CF8DCAF-497C-2D93-CB35-AB9E34B9EB73" schemeIdUri="urn:mpeg:dash:mp4protection:2011" value="cenc"/>
+      <ContentProtection schemeIdUri="urn:uuid:F239E769-EFA3-4850-9C16-A903C6932EFB" value="AdobeAccess 5.0">
+        <access:pssh uri="video.pssh"/>
+      </ContentProtection>
+      <Representation bandwidth="704000" codecs="avc1.420015" height="224" id="1" width="400">
+        <BaseURL>video/</BaseURL>
+        <SegmentTemplate initialization="videoInit.mp4" media="video$Number$.m4s" startNumber="0" timescale="1000">
+          <SegmentTimeline>
+            <S d="5172" t="0"/>
+            <S d="4629" t="5172"/>
+            <S d="5089" t="9801"/>
+            <S d="3962" t="14890"/>
+            <S d="3295" t="18852"/>
+            <S d="2294" t="22147"/>
+            <S d="6006" t="24441"/>
+            <S d="2086" t="30447"/>
+            <S d="4004" t="32533"/>
+            <S d="6006" t="36537"/>
+            <S d="3211" t="42543"/>
+            <S d="2461" t="45754"/>
+            <S d="4629" t="48215"/>
+            <S d="6006" t="52844"/>
+            <S d="3003" r="1" t="58850"/>
+            <S d="5256" t="64856"/>
+            <S d="1918" t="70112"/>
+            <S d="6006" t="72030"/>
+            <S d="4004" t="78036"/>
+            <S d="4255" t="82040"/>
+            <S d="3003" t="86295"/>
+            <S d="3044" t="89298"/>
+            <S d="4088" t="92342"/>
+            <S d="5046" t="96430"/>
+            <S d="2753" t="101476"/>
+            <S d="6006" t="104229"/>
+            <S d="3003" r="1" t="110235"/>
+            <S d="5756" t="116241"/>
+            <S d="3003" r="1" t="121997"/>
+            <S d="4796" t="128003"/>
+            <S d="4713" t="132799"/>
+            <S d="4255" t="137512"/>
+            <S d="4879" t="141767"/>
+            <S d="3712" t="146646"/>
+            <S d="2878" t="150358"/>
+            <S d="4922" t="153236"/>
+            <S d="1793" t="158158"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+    <AdaptationSet bitstreamSwitching="true" contentType="audio" id="2" lang="eng" mimeType="audio/mp4" segmentAlignment="1" startWithSAP="1">
+      <Representation bandwidth="97000" codecs="mp4a.40.2" id="1">
+        <BaseURL>audio/</BaseURL>
+        <SegmentTemplate initialization="videoInit.mp4" media="video$Number$.m4s" startNumber="0" timescale="1000">
+          <SegmentTimeline>
+            <S d="4017" t="0"/>
+            <S d="3994" r="1" t="4017"/>
+            <S d="4017" t="12005"/>
+            <S d="3994" t="16022"/>
+            <S d="3993" t="20016"/>
+            <S d="3994" t="24009"/>
+            <S d="4017" t="28003"/>
+            <S d="3994" r="2" t="32020"/>
+            <S d="4017" t="44002"/>
+            <S d="3994" t="48019"/>
+            <S d="3993" t="52013"/>
+            <S d="3994" t="56006"/>
+            <S d="4017" t="60000"/>
+            <S d="3994" r="1" t="64017"/>
+            <S d="4017" t="72005"/>
+            <S d="3994" r="1" t="76022"/>
+            <S d="3993" t="84010"/>
+            <S d="4017" t="88003"/>
+            <S d="3994" r="2" t="92020"/>
+            <S d="4017" t="104002"/>
+            <S d="3994" r="1" t="108019"/>
+            <S d="3993" t="116007"/>
+            <S d="4018" t="120000"/>
+            <S d="3993" t="124018"/>
+            <S d="3994" t="128011"/>
+            <S d="4017" t="132005"/>
+            <S d="3994" r="2" t="136022"/>
+            <S d="4017" t="148004"/>
+            <S d="3994" t="152021"/>
+            <S d="3993" t="156015"/>
+          </SegmentTimeline>
+        </SegmentTemplate>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>
