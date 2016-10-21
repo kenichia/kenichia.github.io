@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Skin 1 Example</title>
+    <meta name="description" content=""/>
+
+    <!--Including skin1 of the player's default skins.-->
+    <link rel="stylesheet" href="skins/skin1/css/styles.css">
+
+    <!-- Add polyfill.js for IE 10 -->
+    <script src="libs/polyfills.js"></script>
+
+    <!--Script include for the primetime tv sdk and associated dependencies-->
+    <script src="../../frameworks/player/dash.min.js"></script>
+    <script src="../../frameworks/player/primetimemain.min.js"></script>
+    <script src="../../frameworks/player/swfobject.js"></script>
+    <script src="../../frameworks/player/primetimeei.min.js"></script>
+	<script src="../../frameworks/player/primetimeva.min.js"></script>
+
+    <!--Script include for the primetime visual api and associated dependencies-->
+    <script src="libs/primetimevisualapi.min.js"></script>
+
+    <script>
+        function onload() {
+			var swfPath = "../../frameworks/player/",
+					authorizationTokenPath = "../../frameworks/player/token/",
+					authorizationTokenFilename = "hlsaf_localhost.swf",
+					authorizationTokenType = "SWF";
+
+            // See JSDocs for AdobePSDK for API description
+            // Set relative or http path to directory containing SWF.
+            // Defaults to current directory for the html page.
+            AdobePSDK.setSWFPath(swfPath);
+
+            // Set the relative or http path to directory containing token file(s).
+            // Defaults to SWFPath + "token/".
+            AdobePSDK.setAuthorizationTokenPath(authorizationTokenPath);
+
+            // Set the name of the token file, do not include any path in this string.
+            AdobePSDK.setAuthorizationTokenFilename(authorizationTokenFilename);
+
+            //Set the token type, "DAT" or "SWF". Defaults to "DAT"
+            AdobePSDK.setAuthorizationTokenType(authorizationTokenType);
+
+            //uses a CSS id selector to select the div with the id of videoHolder, but any CSS selector will work
+            //then passes a reference to the video's root element (in this case the videoHolder div) to the videoPlayer function
+            //this function returns a reference to the public API of the videoBehavior, which allows programmatic manipulation of the
+            //video and playback
+            var player = ptp.videoPlayer('#videoHolder');
+
+            //In this example, we programmaticly load a resource by
+            //calling the loadResource function of the associated videoBehavior, passing a basic URL to play
+            //loads an mp4
+            player.loadResource("http://de9b7h88wgj5l.cloudfront.net/static/flashmedia/VideoTeam/Media_Source/adobe-ad/1_adobe_ad1_31_1240.mp4");
+            player.log.withLevel(ptp.logger.ALL).filter(
+                    function (logObj) {
+                        return logObj.category == 'VideoBehavior'
+                    }).output(function (message) {
+                console.log(message + ' | Some Stuff');
+            });
+        }
+    </script>
+
+</head>
+<body onload="onload();">
+<!--Defines a div to hold the video content. This div will serve as the display root for all video related objects-->
+<div id="videoHolder"></div>
+</body>
+
+</html>

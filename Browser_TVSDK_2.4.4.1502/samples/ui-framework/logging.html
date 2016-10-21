@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Skin 1 Example</title>
+    <meta name="description" content=""/>
+
+    <!--Including skin1 of the player's default skins.-->
+    <link rel="stylesheet" href="skins/skin1/css/styles.css">
+
+    <style>
+        .horiz {
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+
+    <!-- Add polyfill.js for IE 10 -->
+    <script src="libs/polyfills.js"></script>
+
+    <!--Script include for the primetime tv sdk and associated dependencies-->
+    <script src="../../frameworks/player/dash.min.js"></script>
+    <script src="../../frameworks/player/primetimemain.min.js"></script>
+    <script src="../../frameworks/player/swfobject.js"></script>
+    <script src="../../frameworks/player/primetimeei.min.js"></script>
+	<script src="../../frameworks/player/primetimeva.min.js"></script>
+
+    <!--Script include for the primetime visual api and associated dependencies-->
+    <script src="libs/primetimevisualapi.min.js"></script>
+
+    <script>
+        function onload() {
+			var swfPath = "../../frameworks/player/",
+					authorizationTokenPath = "../../frameworks/player/token/",
+					authorizationTokenFilename = "hlsaf_localhost.swf",
+					authorizationTokenType = "SWF";
+
+            // See JSDocs for AdobePSDK for API description
+            // Set relative or http path to directory containing SWF.
+            // Defaults to current directory for the html page.
+            AdobePSDK.setSWFPath(swfPath);
+
+            // Set the relative or http path to directory containing token file(s).
+            // Defaults to SWFPath + "token/".
+            AdobePSDK.setAuthorizationTokenPath(authorizationTokenPath);
+
+            // Set the name of the token file, do not include any path in this string.
+            AdobePSDK.setAuthorizationTokenFilename(authorizationTokenFilename);
+
+            //Set the token type, "DAT" or "SWF". Defaults to "DAT"
+            AdobePSDK.setAuthorizationTokenType(authorizationTokenType);
+
+            var consoleLogger = function(msg) {
+                console.log('Simple Logging ' + msg );
+            };
+            //In this example, we add very simple logging to the console
+            var simpleLoggingPlayer = ptp.videoPlayer('#videoHolder1', {
+                logLevel:ptp.logger.WARN,
+                logOutput:consoleLogger,
+                player: {
+                    //provide a starting mediaResource. In this case the configuration is a simple string, treated as a URI, to load.
+                    mediaResource: 'http://de9b7h88wgj5l.cloudfront.net/static/flashmedia/VideoTeam/Media_Source/adobe-ad/1_adobe_ad1_31_1240.mp4'
+                }});
+
+            var advancedLoggingPlayer = ptp.videoPlayer('#videoHolder2', {
+                player: {
+                    //provide a starting mediaResource. In this case the configuration is a simple string, treated as a URI, to load.
+                    mediaResource: 'http://de9b7h88wgj5l.cloudfront.net/static/flashmedia/VideoTeam/Media_Source/adobe-ad/1_adobe_ad1_31_1240.mp4'
+                }});
+
+            var textOutput = document.getElementById('textOutput');
+            //This example shows more advanced logger capabilities
+            advancedLoggingPlayer.log.withLevel(ptp.logger.ALL).filter(
+                    function (logObj) {
+                        return logObj.category == 'VideoBehavior'
+                    }).output(function (message) {
+                textOutput.innerHTML += ( message + '\n' );
+            });
+        }
+    </script>
+</head>
+<body onload="onload();">
+<div class="horiz">
+    <div id="videoHolder1"></div>
+    <div id="videoHolder2"></div>
+</div>
+<textarea id="textOutput" rows="15" cols="80"></textarea>
+</body>
+
+</html>

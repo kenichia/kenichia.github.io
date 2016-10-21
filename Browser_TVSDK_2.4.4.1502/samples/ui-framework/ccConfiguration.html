@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Closed Captioning Config</title>
+        <meta name="description" content="" />
+
+        <!--Including skin1 of the player's default skins.-->
+        <link rel="stylesheet" href="skins/skin1/css/styles.css">
+
+        <!-- Add polyfill.js for IE 10 -->
+        <script src="libs/polyfills.js"></script>
+
+        <!--Script include for the primetime tv sdk and associated dependencies-->
+        <script src="../../frameworks/player/dash.min.js"></script>
+        <script src="../../frameworks/player/primetimemain.min.js"></script>
+        <script src="../../frameworks/player/swfobject.js"></script>
+        <script src="../../frameworks/player/primetimeei.min.js"></script>
+		<script src="../../frameworks/player/primetimeva.min.js"></script>
+
+        <!--Script include for the primetime visual api and associated dependencies-->
+        <script src="libs/primetimevisualapi.min.js"></script>
+
+        <script>
+            function onload() {
+				var swfPath = "../../frameworks/player/",
+						authorizationTokenPath = "../../frameworks/player/token/",
+						authorizationTokenFilename = "hlsaf_localhost.swf",
+						authorizationTokenType = "SWF";
+
+                // See JSDocs for AdobePSDK for API description
+                // Set relative or http path to directory containing SWF.
+                // Defaults to current directory for the html page.
+                AdobePSDK.setSWFPath(swfPath);
+
+                // Set the relative or http path to directory containing token file(s).
+                // Defaults to SWFPath + "token/".
+                AdobePSDK.setAuthorizationTokenPath(authorizationTokenPath);
+
+                // Set the name of the token file, do not include any path in this string.
+                AdobePSDK.setAuthorizationTokenFilename(authorizationTokenFilename);
+
+                //Set the token type, "DAT" or "SWF". Defaults to "DAT"
+                AdobePSDK.setAuthorizationTokenType(authorizationTokenType);
+
+                var player = ptp.videoPlayer('#videoHolder', {
+                    //well-known key for configuring the player instance itself
+                    player:{
+                        //turn on autoPlay
+                        autoPlay:true,
+                        //provide a starting mediaResource. In this case the configuration is expanded to show other possible properties
+                        //but the mediaResource can also take a simple string, treated as a URI, to load.
+                        mediaResource : {
+                            // CC Content
+                            resourceUrl:'http://de9b7h88wgj5l.cloudfront.net/static/set1/hls_mbr/set1_hls_mbr_5mins.m3u8'
+                        },
+                        ccStyle: {
+                            font:AdobePSDK.TextFormat.CURSIVE,
+                            fontColor:AdobePSDK.TextFormat.BRIGHT_WHITE,
+                            edgeColor:AdobePSDK.TextFormat.BLUE,
+                            backgroundColor:AdobePSDK.TextFormat.BLACK,
+                            fillColor:AdobePSDK.TextFormat.BLUE,
+                            size:AdobePSDK.TextFormat.MEDIUM,
+                            fontOpacity:100,
+                            backgroundOpacity:1,
+                            fillOpacity:1
+                        }
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body onload="onload();">
+        <!--Defines a div to hold the video content. This div will serve as the display root for all video related objects-->
+        <div id="videoHolder"></div>
+    </body>
+
+
+</html>

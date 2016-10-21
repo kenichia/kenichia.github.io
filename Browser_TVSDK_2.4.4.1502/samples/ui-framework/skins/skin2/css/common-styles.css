@@ -1,0 +1,186 @@
+/*
+    This style is applied to the div passed into the video player.
+*/
+.ptp-root-element {
+    width: 616px;
+    height: 347px;
+    position: relative; /* keeps controls inside our specified area */
+}
+
+/*
+    This style is applied to the div passed into the video player.
+    It is to be used to set background related styles under the player components.
+*/
+.ptp-background-style {
+
+}
+
+/*
+    Used in a single video view, applied to the element the video player creates that will contain
+    the video that the Primetime SDK creates.
+*/
+.ptp-main-video-div-style {
+    width: 100%;
+    height: 100%;
+    position: relative; /* keeps control bar inside our specified area */
+    z-index: 9;
+    pointer-events: auto;
+    overflow: hidden;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+}
+
+/*
+    Applied to the single view video when the PIP is active.
+    Sizing of the video when it is being presented as a PIP
+*/
+.ptp-main-video-div-style.pip-mode-active {
+    width: 125px; /* need actual dimensions */
+    height: 71px;
+    z-index: 10;
+    position: absolute;
+    border: 1px solid silver;
+    bottom: 60px; /* Putting in a fixed location for now until we have more time to work on styles. */
+    right: 10px;   /* Putting in a fixed location for now until we have more time to work on styles. */
+}
+
+/*
+    Applied to the single view video when the Picture-in-Picture is active in certain circumstances.
+*/
+.ptp-main-video-div-style.pip-mode-active.hidden {
+    display: none;
+}
+
+/*
+    Applied to the initial Picture-in-Picture.
+*/
+.ptp-pip-video-div {
+    width: 125px; /* need actual dimensions */
+    height: 71px;
+    z-index: 10;
+    position: absolute;
+    border: 1px solid silver;
+    bottom: 60px; /* Putting in a fixed location for now until we have more time to work on styles. */
+    right: 10px;   /* Putting in a fixed location for now until we have more time to work on styles. */
+}
+
+/*
+    Applied to the initial Picture-in-Picture when it has been swapped and is being displayed as the main video.
+*/
+.ptp-pip-video-div.view-as-main-video {
+    width: 100%;
+    height: 100%;
+    position: relative; /* keeps control bar inside our specified area */
+    z-index: 9;
+    pointer-events: auto;
+    bottom: 0px;
+    right: 0px;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+}
+
+/*
+    Used when hiding the Picture-in-Picture.
+*/
+.ptp-pip-video-div.hidden {
+    display: none;
+}
+
+/*
+    Used in the multi video view, applied to the element that will contain (n) number of video players.
+*/
+.ptp-multi-view-container {
+    width: 100%;
+    height: 100%;
+    position: relative; /* keeps control bar inside our specified area */
+    background-color: #000000;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    flex-wrap: wrap;
+}
+
+/* A common css style that is placed on each video in the multiview. */
+.ptp-multi-view-view {
+    overflow: hidden;
+}
+
+/*
+When the container housing each of the videos in multiview is in multiview, shrink their size so flexbox
+tiles the in a grid.
+*/
+.ptp-multi-view-view.multiview {
+    width: 50% !important;
+    height: 50% !important;
+    position:relative;
+}
+
+/*
+Hides a given multiview view.
+*/
+.ptp-multi-view-view.hidden {
+    display: none;
+}
+
+/*
+When an item is selected in multiview, give it a blue border.
+*/
+.ptp-multi-view-view.multiview.active {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 2px solid #326EC8;
+}
+
+/*
+Background color for a multiview video to display before the video element is generated and the SDK overrides it.
+*/
+.ptp-multi-view-view-0 {
+    background: #aaaaaa;
+}
+
+/*
+Background color for a multiview video to display before the video element is generated and the SDK overrides it.
+*/
+.ptp-multi-view-view-1 {
+    background: #888888;
+}
+
+/*
+Background color for a multiview video to display before the video element is generated and the SDK overrides it.
+*/
+.ptp-multi-view-view-2 {
+    background: #555555;
+}
+
+/*
+Background color for a multiview video to display before the video element is generated and the SDK overrides it.
+*/
+.ptp-multi-view-view-3 {
+    background: #222222;
+}
+
+/* For IE 10 */
+[hidden] {
+    display: none;
+}

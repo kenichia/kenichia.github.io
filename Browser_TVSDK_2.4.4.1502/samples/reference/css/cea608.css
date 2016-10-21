@@ -1,0 +1,103 @@
+::cue {
+  font-family: monospace;
+  font-style: normal;
+  font-weight: normal;
+  background-color: black;
+  color: white;
+}
+/* special cue parts */
+.transparent {
+  color: transparent;
+}
+/* need to set this before changing color, otherwise the color is lost */
+.semi-transparent {
+  color: rgba(0, 0, 0, 0.5);
+}
+/* need to set this before changing color, otherwise the color is lost */
+.opaque {
+  color: rgba(0, 0, 0, 1);
+}
+.blink {
+  text-decoration: blink;
+}
+.white {
+  color: white;
+}
+.red {
+  color: red;
+}
+.green {
+  color: lime;
+}
+.blue {
+  color: blue;
+}
+.cyan {
+  color: cyan;
+}
+.yellow {
+  color: yellow;
+}
+.magenta {
+  color: magenta;
+}
+.bg_transparent {
+  background-color: transparent;
+}
+/* need to set this before changing color, otherwise the color is lost */
+.bg_semi-transparent {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* need to set this before changing color, otherwise the color is lost */
+.bg_opaque {
+  background-color: rgba(0, 0, 0, 1);
+}
+.bg_white {
+  background-color: white;
+}
+.bg_green {
+  background-color: lime;
+}
+.bg_blue {
+  background-color: blue;
+}
+.bg_cyan {
+  background-color: cyan;
+}
+.bg_red {
+  background-color: red;
+}
+.bg_yellow {
+  background-color: yellow;
+}
+.bg_magenta {
+  background-color: magenta;
+}
+.bg_black {
+  background-color: black;
+}
+/* Examples of combined colors */
+.bg_white.bg_semi-transparent {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.bg_green.bg_semi-transparent {
+  background-color: rgba(0, 256, 0, 0.5);
+}
+.bg_blue.bg_semi-transparent {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+.bg_cyan.bg_semi-transparent {
+  background-color: rgba(0, 255, 255, 0.5);
+}
+.bg_red.bg_semi-transparent {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.bg_yellow.bg_semi-transparent {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+.bg_magenta.bg_semi-transparent {
+  background-color: rgba(255, 0, 255, 0.5);
+}
+.bg_black.bg_semi-transparent {
+  background-color: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,1882 @@
+.ptp {
+
+}
+
+.ptp-control {
+    margin-left: 3px;
+    z-index: 1;
+}
+
+/*
+    Default styles for the control bar HTML element.
+*/
+.ptp-control-bar {
+    background: #000000; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#c7c7c7, #777777); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#C7C7C7, #777777); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#C7C7C7, #777777); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#C7C7C7, #777777); /* Standard syntax */
+
+    width: 604px;
+    height: 36px;
+    padding: 6px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 200;
+    opacity: 0;
+
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    -ms-transition: opacity .3s;
+    transition: opacity .3s;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    align-items: flex-end;
+    -ms-flex-pack: end;
+    -webkit-align-items: flex-end;
+}
+
+/*
+    Styles for the control bar HTML element when in full screen.
+*/
+.ptp-control-bar.fullscreen-state {
+    width: 100%;
+}
+
+/*
+    Styles for the control bar HTML element when the main video area is moused over.
+*/
+.ptp-root-element:hover .ptp-control-bar {
+     opacity: .9;
+}
+
+/*
+    Default styles for text controls.
+*/
+.ptp-txt-control {
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    color: #EEE;
+}
+
+/*
+    Default styles for the time remaining HTML element.
+*/
+.ptp-txt-display-time {
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    color: #EEE;
+    order: 3; -webkit-order:3;
+    -ms-flex-order: 3;
+    height: 36px;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+}
+
+/* Fast Forward Button : Initial State */
+.ptp-btn-fastforward {
+    background-image: url(../icons/fastforward_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order:9; -webkit-order:9;
+    -ms-flex-order: 9;
+}
+
+/* Fast Forward Button: In Multi View State */
+.ptp-btn-fastforward.multi-view {
+    display: none;
+}
+
+/* Fast Forward Button : Hover State */
+.ptp-btn-fastforward:hover {
+
+}
+
+/* Fast Forward Button : Active State */
+.ptp-btn-fastforward:active {
+
+}
+
+/* Fast Forward Button : Disabled State */
+.ptp-btn-fastforward.disabled {
+    opacity: 0.5;
+    cursor:not-allowed !important;
+}
+
+/* Fast Forward Button : Hidden State */
+.ptp-btn-fastforward.hidden {
+    display: none;
+}
+
+/* Fast Forward Button : Ad Break State */
+.ptp-btn-fastforward.ad-break {
+    display: none;
+}
+
+/* Full Screen Button : Initial State */
+.ptp-btn-fullscreen {
+    background-image: url(../icons/fullscreen_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order: 14; -webkit-order:14;
+    -ms-flex-order: 14;
+}
+
+/* Full Screen Button : Hover State */
+.ptp-btn-fullscreen:hover {
+
+}
+
+/* Full Screen Button : Active State */
+.ptp-btn-fullscreen:active {
+
+}
+
+/* Full Screen Button : Disabled State */
+.ptp-btn-fullscreen.disabled {
+
+}
+
+/* Full Screen Button : Full Screen State */
+.ptp-btn-fullscreen.fullscreen-state {
+    background-image: url(../icons/fullscreen_return_36@2x.png);
+}
+
+/* Full Screen Button : Full Screen : Hover State */
+.ptp-btn-fullscreen.fullscreen-state:hover {
+
+}
+
+/* Full Screen Button : Active State */
+.ptp-btn-fullscreen.fullscreen-state:active {
+
+}
+
+/* Full Screen Button : Disabled State */
+.ptp-btn-fullscreen.fullscreen-state.disabled {
+
+}
+
+/* More Options Button : Initial State */
+.ptp-btn-more-options {
+    background-image: url(../icons/more_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order: 12; -webkit-order:12;
+    -ms-flex-order: 12;
+}
+
+/* More Options Button : Initial State - when used in the control bar. */
+.ptp-btn-more-options.ptp-control-bar-btn {
+    /* This button is only available on the control bar in the mobile view. */
+    display: none;
+}
+
+/* More Options Button : Active State */
+.ptp-btn-more-options.active {
+    background-image: url(../icons/more_enabled_36@2x.png);
+}
+
+/* More Options Button : Ad Break State */
+.ptp-btn-more-options.ad-break {
+    display: none;
+}
+
+/* More Options Button : Hidden State */
+.ptp-btn-more-options.hidden {
+    display: none;
+}
+
+/* MultiView Button : Initial State */
+.ptp-btn-multiview {
+    background-image: url(../icons/multiview_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order: 13; -webkit-order:13;
+    -ms-flex-order: 13;
+}
+
+/* MultiView Button : Active State */
+.ptp-btn-multiview.active {
+    background-image: url(../icons/multiview_return_36@2x.png);
+}
+
+/* MultiView Button : Hidden State */
+.ptp-btn-multiview.hidden {
+    display: none;
+}
+
+/* Error Message Panel : Initial State */
+.ptp-error-message-panel {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 201;
+    top: 50%;
+    left: 50%;
+    width: 616px;           /* same size as the player window */
+    height: 294px;           /* same size as the player window */
+    margin-left: -308px;     /* Shift over half the width */
+    margin-top:  -173px;      /* Shift up half the height */
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    flex-direction: column;
+    -webkit-flex-direction:column;
+    -moz-flex-direction:column;
+
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+}
+
+/* Error Message Panel : Hidden State */
+.ptp-error-message-panel.hidden {
+    display: none;
+}
+
+/*
+    Error Message Icon
+    This is the icon displayed in the Error Message Panel, above the message.
+ */
+.ptp-error-message-panel-icon {
+    /* TODO: Waiting on an icon export for the error icon in the comps. */
+    background-image: url(../icons/multiview_36@2x.png); /* Throwing a random image into this location for now */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+
+    width: 36px;
+    height: 36px;
+}
+
+/*
+    Default styles for the error message text.
+ */
+.ptp-error-message-panel-message {
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    color: #EEE;
+}
+
+/* Social Sharing Button : Initial State */
+.ptp-btn-share-video {
+    background-image: url(../icons/share_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order: 11; -webkit-order:11;
+    -ms-flex-order: 11;
+}
+
+/* Social Sharing Button : Ad Break State */
+.ptp-btn-share-video.ad-break {
+    display: none;
+}
+
+/* Social Sharing Button: In Multi View State */
+.ptp-btn-share-video.multi-view {
+    display: none;
+}
+
+/* Progress Bar Thumbnail : Initial State */
+/* The styles applied to the thumb nail pop up when mousing over the progress bar. */
+.ptp-progress-bar-thumb-nail {
+    background: rgba(0, 0, 0, 0.7);
+    width: 108px;
+    height: 61px;
+    position: absolute;
+    top:-75px;
+    border: 1px solid silver;
+    z-index: 1; /* This is to get it to display above the trickplay widget */
+}
+
+/* Progress Bar Thumbnail : Hidden State */
+.ptp-progress-bar-thumb-nail.hidden {
+    display: none;
+}
+
+/* Social Sharing Panel : Initial State */
+.ptp-share-video-panel {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 201;
+    top: 50%;
+    left: 50%;
+    width: 400px;           /* same size as the player window */
+    height: 200px;           /* same size as the player window */
+    margin-left: -200px;     /* Shift over half the width */
+    margin-top:  -125px;      /* Shift up half the height */
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    flex-direction: column;
+    -webkit-flex-direction:column;
+    -moz-flex-direction:column;
+}
+
+/* Social Sharing Panel : Hidden State */
+.ptp-share-video-panel.hidden {
+    display: none;
+}
+
+/* Social Sharing Menu */
+.share-video-panel-menu {
+    height: 100%;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    flex-direction:row;
+    -webkit-flex-direction:row;
+    -moz-flex-direction:row;
+
+    flex-wrap: wrap;
+}
+
+/* Social Sharing Menu Item : Initial State */
+.ptp-share-video-panel-menu-item {
+    flex-basis: 33%;
+    -webkit-flex-basis: 33%;
+    -moz-flex-basis: 33%;
+}
+
+/* Social Sharing Menu Item : Hidden State */
+.ptp-share-video-panel-menu-item.hidden {
+    display: none;
+}
+
+/* Social Sharing Menu Item : Hover State */
+.ptp-share-video-panel-menu-item:hover {
+    cursor: pointer; cursor: hand;
+}
+
+/* Social Sharing : Facebook Menu Item: Initial State */
+.ptp-btn-share-video-facebook {
+    background-image: url(../icons/facebook_48@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px 48px;
+
+    width: 48px;
+    height: 48px;
+}
+
+/* Social Sharing : Twitter Menu Item: Initial State */
+.ptp-btn-share-video-twitter {
+    background-image: url(../icons/twitter_48@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px 48px;
+
+    width: 48px;
+    height: 48px;
+}
+
+/* Social Sharing : G+ Menu Item: Initial State */
+.ptp-btn-share-video-google-plus {
+    background-image: url(../icons/googleplus_48@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px 48px;
+
+    width: 48px;
+    height: 48px;
+}
+
+/* Social Sharing : Linkedin Menu Item: Initial State */
+.ptp-btn-share-video-linkedin {
+    background-image: url(../icons/linkedin_48@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px 48px;
+
+    width: 48px;
+    height: 48px;
+}
+
+/* Play/Pause Button : Initial State */
+.ptp-btn-playpause {
+    background-image: url(../icons/play_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px 35px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order: 0; -webkit-order:0;
+    -ms-flex-order: 0;
+}
+
+/* Play/Pause Button : Play Hover State */
+.ptp-btn-playpause:hover {
+
+}
+
+/* Play/Pause Button : Play Active State */
+.ptp-btn-playpause:active {
+
+}
+
+/* Play/Pause Button : Play Disabled State */
+.ptp-btn-playpause.disabled {
+
+}
+
+/* Play/Pause Button : Pause State */
+.ptp-btn-playpause.pause-state {
+    background-image: url(../icons/pause_36@2x.png);
+    background-size: 50px 40px;
+}
+
+/* Play/Pause Button : Pause Hover State */
+.ptp-btn-playpause.pause-state:hover {
+
+}
+
+/* Play/Pause Button : Pause Active State */
+.ptp-btn-playpause.pause-state:active {
+
+}
+
+/* Play/Pause Button : Pause DisabledState */
+.ptp-btn-playpause.pause-state.disabled {
+
+}
+
+/* Play/Pause Button : Replay State */
+.ptp-btn-playpause.replay-state {
+    background-image: url(../icons/replay_36@2x.png);
+    background-size: 21px 21px;
+}
+
+/* Play/Pause Button : Replay Hover State */
+.ptp-btn-playpause.replay-state:hover {
+
+}
+
+/* Play/Pause Button : Replay Active State */
+.ptp-btn-playpause.replay-state:active {
+
+}
+
+/* Play/Pause Button : Replay Disabled State */
+.ptp-btn-playpause.replay-state.disabled {
+
+}
+
+/* Closed Caption Button */
+.ptp-btn-closed-caption {
+    background-image: url(../icons/cc_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order: 12; -webkit-order:12;
+    -ms-flex-order: 12;
+}
+
+/* Closed Caption Button : Hidden State */
+.ptp-btn-closed-caption.hidden {
+    display: none;
+}
+
+/* Closed Caption Button : Ad Break State */
+.ptp-btn-closed-caption.ad-break {
+    display: none;
+}
+
+/* Closed Caption Button: In Multi View State */
+.ptp-btn-closed-caption.multi-view {
+    display: none;
+}
+
+/*
+    Closed Caption Button : 'On' State
+    What the closed caption button looks like when captions have been enabled for a video.
+*/
+.ptp-btn-closed-caption.on-state {
+    background-image: url(../icons/cc_enabled_36@2x.png);
+    background-size: 50px 50px;
+}
+
+/* Audio Track Button : Initial State */
+.ptp-btn-audio-track {
+    background-image: url(../icons/audio_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order: 11; -webkit-order:11;
+    -ms-flex-order: 11;
+}
+
+/* Audio Track Button : Hidden State */
+.ptp-btn-audio-track.hidden {
+    display: none;
+}
+
+/* Audio Track Selector Button : Ad Break State */
+.ptp-btn-audio-track.ad-break {
+    display: none;
+}
+
+/* Audio Track Selector Button: In Multi View State */
+.ptp-btn-audio-track.multi-view {
+    display: none;
+}
+
+/* PIP Button : Initial State */
+.ptp-btn-pip {
+    background-image: url(../icons/pip_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order: 12; -webkit-order:12;
+    -ms-flex-order: 12;
+}
+
+/* PIP Button : Hover State */
+.ptp-btn-pip:hover {
+
+}
+
+/* PIP Button : Active State */
+.ptp-btn-pip:active {
+
+}
+
+/* PIP Button : Disabled State */
+.ptp-btn-pip.disabled {
+
+}
+
+/* PIP Button : Hidden State */
+.ptp-btn-pip.hidden {
+    display: none;
+}
+
+/* PIP Button : Ad Break State */
+.ptp-btn-pip.ad-break {
+    display: none;
+}
+
+/* PIP Button: In Multi View State */
+.ptp-btn-pip.multi-view {
+    display: none;
+}
+
+/* Rewind Button : Initial State */
+.ptp-btn-rewind {
+    background-image: url(../icons/10rew_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order: 2; -webkit-order:2;
+    -ms-flex-order: 2;
+}
+
+/* Rewind Button: In Multi View State */
+.ptp-btn-rewind.multi-view {
+    display: none;
+}
+
+
+/* Rewind Button : Hover State */
+.ptp-btn-rewind:hover {
+
+}
+
+/* Rewind Button : Active State */
+.ptp-btn-rewind:active {
+
+}
+
+/* Rewind Button : Disabled State */
+.ptp-btn-rewind.disabled {
+
+}
+
+/* Rewind Button : Ad Break State */
+.ptp-btn-rewind.ad-break {
+    display: none;
+}
+
+/* Fast Rewind Button : Initial State */
+.ptp-btn-fastrewind {
+    background-image: url(../icons/rewind_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order:6; -webkit-order:6;
+    -ms-flex-order: 6;
+}
+
+/* Fast Rewind Button: In Multi View State */
+.ptp-btn-fastrewind.multi-view {
+    display: none;
+}
+
+/* Fast Rewind Button : Hover State */
+.ptp-btn-fastrewind:hover {
+
+}
+
+/* Fast Rewind Button : Active State */
+.ptp-btn-fastrewind:active {
+
+}
+
+/* Fast Rewind Button : Disabled State */
+.ptp-btn-fastrewind.disabled {
+    opacity: 0.5;
+    cursor:not-allowed !important;
+}
+
+/* Fast Rewind Button : Hidden State */
+.ptp-btn-fastrewind.hidden {
+    display: none;
+}
+
+/* Fast Rewind Button : Ad Break State */
+.ptp-btn-fastrewind.ad-break {
+    display: none;
+}
+
+/* Slow Forward Button : Initial State */
+.ptp-btn-slowforward {
+    background-image: url(../icons/fastforward_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order:8; -webkit-order:8;
+    -ms-flex-order: 8;
+}
+
+/* Slow Forward Button: In Multi View State */
+.ptp-btn-slowforward.multi-view {
+    display: none;
+}
+
+/* Slow Forward Button : Hover State */
+.ptp-btn-slowforward:hover {
+
+}
+
+/* Slow Forward Button : Active State */
+.ptp-btn-slowforward:active {
+
+}
+
+/* Slow Forward Button : Disabled State */
+.ptp-btn-slowforward.disabled {
+    opacity: 0.5;
+    cursor:not-allowed !important;
+}
+
+/* Slow Forward Button : Hidden State */
+.ptp-btn-slowforward.hidden {
+    display: none;
+}
+
+/* Slow Forward Button : Ad Break State */
+.ptp-btn-slowforward.ad-break {
+    display: none;
+}
+
+/* Slow Rewind Button : Initial State */
+.ptp-btn-slowrewind {
+    background-image: url(../icons/rewind_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    order:6; -webkit-order:6;
+    -ms-flex-order: 6;
+}
+
+/* Slow Rewind Button: In Multi View State */
+.ptp-btn-slowrewind.multi-view {
+    display: none;
+}
+
+/* Slow Rewind Button : Hover State */
+.ptp-btn-slowrewind:hover {
+
+}
+
+/* Slow Rewind Button : Active State */
+.ptp-btn-slowrewind:active {
+
+}
+
+/* Slow Rewind Button : Disabled State */
+.ptp-btn-slowrewind.disabled {
+    opacity: 0.5;
+    cursor:not-allowed !important;
+}
+
+/* Slow Rewind Button : Hidden State */
+.ptp-btn-slowrewind.hidden {
+    display: none;
+}
+
+/* Slow Rewind Button : Ad Break State */
+.ptp-btn-slowrewind.ad-break {
+    display: none;
+}
+
+/* Volume Button : Initial State */
+.ptp-volume-control {
+    z-index: 2001;
+    order: 1; -webkit-order:1;
+    -ms-flex-order: 1;
+
+    width: 36px;
+
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    -ms-transition: width 0.5s;
+    transition:width 0.5s; /* Animation time */
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display:flex;
+
+    flex-direction:row;
+    -webkit-flex-direction:row;
+    -moz-flex-direction:row;
+
+    align-items:center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+}
+
+/* Volume Control : Horizontal Expanded State */
+.ptp-volume-control.expanded {
+    width: 140px;
+}
+
+/* Volume Control : Vertical Collapsed State */
+.ptp-volume-control.vertical {
+    align-items:center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+
+    flex-direction:column-reverse;
+    -webkit-flex-direction:column-reverse;
+    -moz-flex-direction:column-reverse;
+}
+
+/* Volume Control : Vertical Expanded State */
+.ptp-volume-control.vertical.expanded {
+    width: 36px;
+}
+
+/* Volume Button : Initial State */
+.ptp-btn-volume {
+    background-image: url(../icons/s_maximum_36@2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+
+    width: 36px;
+    height: 36px;
+
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+    flex:none;
+}
+
+/* Volume Button : Hover State */
+.ptp-btn-volume:hover, .ptp-volume-slide-container:hover + .ptp-btn-volume {
+
+}
+
+/* Volume Button : Active State */
+.ptp-btn-volume:active {
+
+}
+
+/* Volume Button : Disabled State */
+.ptp-btn-volume.disabled {
+
+}
+
+/* Volume Button : Not Max Audio State */
+.ptp-btn-volume.min-volume-state {
+    background-image: url(../icons/s_medium_36@2x.png);
+}
+
+/* Volume Button : Mute State */
+.ptp-btn-volume.mute-state {
+    background-image: url(../icons/s_mute_36@2x.png);
+}
+
+/* Volume Button : Mute Hover State */
+.ptp-btn-volume.mute-state:hover, .ptp-volume-slide-container:hover + .ptp-btn-volume.mute-state {
+
+}
+
+/* Volume Button : Mute Active State */
+.ptp-btn-volume.mute-state:active {
+
+}
+
+/* Volume Button : Mute Disabled State */
+.ptp-btn-volume.mute-state.disabled {
+
+}
+
+/* Generic Round Button : Initial State */
+.ptp-button-background {
+    border: 0;
+    background-color:rgba(0,0,0,0);
+    outline: 0;
+}
+
+/* Generic Round Button : Hover State */
+.ptp-button-background:hover {
+    background-color:rgba(71,71,71,1);
+    cursor: pointer; cursor: hand;
+    color: pink;
+}
+
+/* Generic Round Button : Link State */
+.ptp-button-background.link {
+    background: none;
+    border: none;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    color: #EEE;
+}
+
+/* Generic Round Button : Link Hover State */
+.ptp-button-background.link:hover {
+    color: #4591ce;
+}
+
+/* Buffering Overlay : Initial State */
+.ptp-buffering-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, .25) url("../icons/buffering-overlay.png") no-repeat center;
+    text-align: center;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Volume Slider : Initial State, default to horizontal */
+.ptp-volume-slider {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    color: #00c;
+    width: 100px;
+    height: 36px;
+    -webkit-appearance: slider-horizontal;
+}
+
+/* Volume Slider : Initial State, vertical when the volume control is vertical */
+.ptp-volume-control.vertical .ptp-volume-slider {
+    width: 100px;
+    height: 48px;
+    position: absolute;
+    top: -68px;
+    left: 15px;
+
+    /* Need to rotate instead of using the html orientation due to the fact we can't disable webkit styles when vertical. */
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+/* Volume Slider : Hidden State */
+.ptp-volume-hidden {
+    display: none;
+}
+
+/* Scrub Bar : Initial State */
+.ptp-scrub-bar {
+    top: -4px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, .7);
+    position: absolute;
+    overflow: hidden;
+
+    -webkit-transition: top .2s, height .2s;
+    -moz-transition: top .2s, height .2s;
+    -o-transition: top .2s, height .2s;
+    -ms-transition: top .2s, height .2s;
+    transition: top .2s, height .2s;
+}
+
+/* Scrub Bar : Buffer Bar : Initial State */
+.ptp-scrub-bar .ptp-buffer-progress-bar {
+    background: rgba(0, 0, 0, .5);
+    width: 50%;
+    height: 4px;
+    position: absolute;
+    z-index: 0;
+
+    -webkit-transition: top .2s, height .2s;
+    -moz-transition: top .2s, height .2s;
+    -o-transition: top .2s, height .2s;
+    -ms-transition: top .2s, height .2s;
+    transition: top .2s, height .2s;
+}
+
+/* Scrub Bar : 'Seek To' Bar : Initial State */
+.ptp-scrub-bar .ptp-seek-to-bar {
+    background: rgb(136, 136, 136);
+    width: 0%;
+    height: 4px;
+    position: absolute;
+    z-index: 1;
+    display: none;
+
+    -webkit-transition: width .2s;
+    -moz-transition: width .2s;
+    -o-transition: width .2s;
+    -ms-transition: width .2s;
+    transition: width .2s;
+}
+
+/* Scrub Bar : 'Seek To' Bar : Ad Break State */
+.ptp-scrub-bar .ptp-seek-to-bar.ad-break {
+    display: none !important;
+}
+
+/* Scrub Bar : Playback Progress Bar : Initial State */
+.ptp-scrub-bar .ptp-playback-progress-bar {
+    background: rgba(208, 2, 27, 1);
+    width: 25%;
+    height: 4px;
+    position: absolute;
+    z-index: 3;
+
+    -webkit-transition: top .2s, height .2s;
+    -moz-transition: top .2s, height .2s;
+    -o-transition: top .2s, height .2s;
+    -ms-transition: top .2s, height .2s;
+    transition: top .2s, height .2s;
+}
+
+/* Scrub Bar : Progress Bar Playhead : Initial State (Default Round) */
+.ptp-scrub-bar .ptp-progress-bar-play-head {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    /* For now making this a white square until we get an idea what the skin should look like, not designed yet */
+    width: 10px;
+    height: 4px;
+    position: absolute;
+    z-index: 4;
+    display: none;
+}
+
+/* Scrub Bar : Hover State */
+.ptp-scrub-bar:hover {
+    top: -10px;
+    height: 10px;
+    cursor: pointer; cursor: hand;
+}
+
+/* Scrub Bar : Ad Break State when hovering over it. */
+.ptp-scrub-bar.ad-break:hover {
+    cursor: default !important;
+    cursor: default !important;
+}
+
+/* Scrub Bar : Buffer Bar state when hovering over the Scrub Bar. */
+.ptp-scrub-bar:hover .ptp-buffer-progress-bar {
+    height: 10px;
+}
+
+/* Scrub Bar : Playback Progress Bar state when hovering over the Scrub Bar. */
+.ptp-scrub-bar:hover .ptp-playback-progress-bar {
+    height: 10px;
+}
+
+/* Scrub Bar : Progress Play Head state when hovering over the Scrub Bar. */
+.ptp-scrub-bar:hover .ptp-progress-bar-play-head {
+    height: 10px;
+    display: block;
+}
+
+/* Scrub Bar : 'Seek To' Bar state when hovering over the Scrub Bar. */
+.ptp-scrub-bar:hover .ptp-seek-to-bar {
+    height: 10px;
+    display: block;
+}
+
+/* Scrub Bar : Ad Markers Bar : Initial State */
+.ptp-scrub-bar .ptp-ad-marker-bar {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Scrub Bar : Ad Markers Bar : Hover State */
+.ptp-scrub-bar:hover .ptp-ad-marker-bar {
+    height: 10px;
+}
+
+/*
+    Scrub Bar : Ad Marker : Initial State
+    Styles for a individual ad marker.
+*/
+.ptp-scrub-bar .ptp-ad-marker {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 248, 53);
+}
+
+/*
+    Control Bar spacer: Initial State
+*/
+.ptp-fill-spacer {
+    order:10; -webkit-order:10;
+    -ms-flex-order: 10;
+
+    -ms-flex-positive: 1;
+
+    flex-grow:1;
+    -webkit-flex-grow:1;
+    -moz-flex-grow:1;
+}
+
+/*
+    Horizontal Rule Separator: Initial State
+*/
+.ptp-hr-separator {
+    padding: 0px;
+    margin: 0px;
+}
+
+/*
+    Style for panel header text
+*/
+.ptp-panel-title {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    font-weight: bold;
+    flex-grow:1;
+    -webkit-flex-grow:1;
+    -moz-flex-grow:1;
+}
+
+/*
+    Style for panel close buttons.
+*/
+.ptp-panel-close-btn {
+    color: #FFFFFF;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    font-weight: bold;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+}
+
+/*
+    Style for panel close buttons : Hover State
+*/
+.ptp-panel-close-btn:hover {
+    background-color:rgba(71,71,71,1);
+    cursor: pointer; cursor: hand;
+}
+
+/*
+    Audio Track Selection Panel : Initial State
+*/
+.ptp-audio-track-selection-panel {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+
+    width: 250px;
+    height: 180px;
+    margin-left: -125px;     /* Shift over half the width */
+    margin-top:  -90px;      /* Shift up half the height */
+
+    border: 1px solid black;
+
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 201;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    flex-direction:column;
+    -webkit-flex-direction:column;
+    -moz-flex-direction:column;
+}
+
+/*
+    Audio Track Selection Panel : Hidden State
+*/
+.ptp-audio-track-selection-panel.hidden {
+    display: none;
+}
+
+/*
+    Audio Track Selection Panel Header : Initial State
+*/
+.ptp-audio-track-selection-header {
+
+}
+
+/*
+    Audio Track Selection Panel Menu : Initial State
+*/
+.ptp-audio-track-selection-menu {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+
+    flex-grow:0;
+    -webkit-flex-grow:0;
+    -moz-flex-grow:0;
+}
+
+/*
+    Closed Caption Panel : Initial State
+    Top level style for closed caption related panels.
+*/
+.ptp-closed-caption-panel {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 201;
+}
+
+/*
+    Closed Caption Language Panel : Initial State
+*/
+.ptp-closed-caption-language-panel {
+    top: 43%;
+    left: 50%;
+    position:    absolute;
+
+    width: 580px;
+    height: 250px;
+    margin-left: -290px;     /* Shift over half the width */
+    margin-top:  -125px;      /* Shift up half the height */
+
+    border: 1px solid black;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    flex-direction:column;
+    -webkit-flex-direction:column;
+    -moz-flex-direction:column;
+}
+
+/*
+    Closed Caption Options Panel : Initial State
+*/
+.ptp-closed-caption-options-panel {
+    top: 50%;
+    left: 50%;
+    width: 616px;           /* same size as the player window */
+    height: 347px;           /* same size as the player window */
+    margin-left: -308px;     /* Shift over half the width */
+    margin-top:  -173px;      /* Shift up half the height */
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    flex-direction: column;
+    -webkit-flex-direction:column;
+    -moz-flex-direction:column;
+}
+
+/*
+    Generic Panel Header : Initial State
+*/
+.ptp-panel-header {
+    height: 40px;
+    padding-left: 4px;
+    padding-right: 4px;
+    flex-shrink: 0;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    align-items:center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+}
+
+/*
+    Closed Caption Panel : Hidden State
+*/
+.ptp-closed-caption-panel.hidden {
+    display: none;
+}
+
+/*
+    Closed Caption Language Menu : Initial State
+*/
+.ptp-closed-caption-language-menu {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+
+    flex-grow:0;
+    -webkit-flex-grow:0;
+    -moz-flex-grow:0;
+}
+
+/*
+    Closed Caption Menu Item : Initial State
+*/
+.ptp-closed-caption-menu-item {
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    color: #EEE;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+ }
+
+/*
+    Closed Caption Menu Item : Selected State
+*/
+.ptp-closed-caption-menu-item.selected {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/*
+    Closed Caption Menu Item : Hover State
+*/
+.ptp-closed-caption-menu-item:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/*
+    Closed Caption Options Button : Initial State
+    The options button in the top of the closed caption language panel.
+*/
+.ptp-closed-caption-options-btn {
+    color: #EEE;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    padding-left:5px;
+    padding-right:5px;
+    cursor: pointer; cursor: hand;
+}
+
+/*
+    Closed Caption Options Button : Hover State
+    The options button in the top of the closed caption language panel.
+*/
+.ptp-closed-caption-options-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/*
+    Closed Caption Done Button : Initial State
+    The 'Done' button in the header of the closed caption options panel.
+*/
+.ptp-closed-caption-done-btn {
+    color: #EEE;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    padding-left:5px;
+    padding-right:5px;
+    cursor: pointer; cursor: hand;
+}
+
+/*
+    Closed Caption Done Button : Hover State
+    The 'Done' button in the header of the closed caption options panel.
+*/
+.ptp-closed-caption-done-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/*
+    Closed Caption Options Menu : Initial State
+*/
+.ptp-closed-caption-options-menu {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    flex-grow:1;
+    -webkit-flex-grow:1;
+    -moz-flex-grow:1;
+    overflow: hidden;
+}
+
+/*
+    Closed Caption Options Main Menu : Initial State
+    Left side menu in the Closed Caption Options Panel.
+*/
+.ptp-closed-caption-options-main-menu {
+    width: 50%;
+    padding-left: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-shrink: 0;
+}
+
+/*
+    Closed Caption Options Sub Menu : Initial State
+    Right side menu in the Closed Caption Options Panel.
+*/
+.ptp-closed-caption-options-sub-menu {
+    color: #EEE;
+    width: 50%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/*
+    Closed Caption Options Sub Menu : Hidden State
+    Right side menu in the Closed Caption Options Panel.
+*/
+.ptp-closed-caption-options-sub-menu.hidden {
+    display:none;
+}
+
+/*
+    Closed Caption Options Opacity Slider : Initial State
+    The opacity slider used across multiple sub menus that control opacity.
+*/
+.ptp-closed-caption-options-opacity-slider {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    justify-content:center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+
+    align-items: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+}
+
+/*
+    Closed Caption Options Separator : Initial State
+    A horizontal / vertical rule that is used to separate the menus.
+*/
+.ptp-closed-caption-options-menu-separator {
+    border-left: thin solid #ffffff;
+    margin:0px;
+}
+
+/*
+    Closed Caption Options Menu Item : Initial State
+    Styles for a give menu item in the CC Options menu.
+*/
+.ptp-closed-caption-options-menu-item {
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    color: #EEE;
+    padding-left: 10px;
+    height: 30px;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+
+    flex-direction: column;
+    -webkit-flex-direction:column;
+    -moz-flex-direction:column;
+}
+
+/*
+    Closed Caption Options Menu Item : Hover State
+    Styles for a give menu item in the CC Options menu.
+*/
+.ptp-closed-caption-options-menu-item:hover {
+     background: rgba(255, 255, 255, 0.5);
+ }
+
+/*
+    Closed Caption Options Menu Item : Selected State
+    Styles for a give menu item in the CC Options menu.
+*/
+.ptp-closed-caption-options-menu-item.selected {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/*
+    Closed Caption Options Sub Menu : Vertical List Menu Item : Initial State
+    Styles for a vertical list menu item that is displayed in the closed caption options sub menu.
+*/
+.ptp-closed-caption-options-sub-menu .ptp-vertical-list-menu-item {
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    color: #EEE;
+    padding-left: 10px;
+    height: 30px;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+
+    flex-direction: column;
+    -webkit-flex-direction:column;
+    -moz-flex-direction:column;
+}
+
+/*
+    Closed Caption Options Sub Menu : Vertical List Menu Item : Hover State
+    Styles for a vertical list menu item that is displayed in the closed caption options sub menu.
+*/
+.ptp-closed-caption-options-sub-menu .ptp-vertical-list-menu-item:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/*
+    Closed Caption Options Sub Menu : Vertical List Menu Item : Selected State
+    Styles for a vertical list menu item that is displayed in the closed caption options sub menu.
+*/
+.ptp-closed-caption-options-sub-menu .ptp-vertical-list-menu-item.selected {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/*
+    Closed Caption Options Footer : Initial State
+    The footer bar in the Closed Caption Options panel.
+*/
+.ptp-closed-caption-options-footer {
+    color: #EEE;
+    height: 60px;
+    flex-shrink: 0;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    align-items:center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+}
+
+/*
+    Closed Caption Options Reset Button : Initial State
+    The reset button in the footer of the closed caption options panel.
+*/
+.ptp-closed-caption-options-reset-button {
+    color: #EEE;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    padding:8px;
+    cursor: pointer; cursor: hand;
+    border: thin solid #ffffff;
+    border-radius:5px;
+}
+
+/*
+    Closed Caption Options Reset Button : Hover State
+    The 'Reset' button in the footer of the closed caption options panel.
+*/
+.ptp-closed-caption-options-reset-button:hover {
+     background: rgba(255, 255, 255, 0.5);
+ }
+
+/*
+    Closed Caption Options Apply Button : Initial State
+    The 'Apply' button in the footer of the closed caption options panel.
+*/
+.ptp-closed-caption-options-apply-button {
+    color: #EEE;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    padding:8px;
+    cursor: pointer; cursor: hand;
+    margin-left: auto;
+    border: thin solid #ffffff;
+    border-radius:5px;
+}
+
+/*
+    Closed Caption Options Apply Button : Hover State
+    The 'Apply' button in the footer of the closed caption options panel.
+*/
+.ptp-closed-caption-options-apply-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.ptp-input-slider[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+}
+.ptp-input-slider[type=range]:focus {
+    outline: none;
+}
+.ptp-input-slider[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #F4F4F4, 0px 0px 1px #F4F4F4;
+    background: rgba(208, 2, 27, 1);
+    border-radius: 0px;
+}
+.ptp-input-slider[type=range]::-webkit-slider-thumb {
+    border: 1px solid #F4F4F4;
+    height: 24px;
+    width: 12px;
+    background: rgba(208, 2, 27, 1);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+}
+.ptp-input-slider[type=range]:focus::-webkit-slider-runnable-track {
+    background: rgba(208, 2, 27, 1);
+}
+.ptp-input-slider[type=range]::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #F4F4F4, 0px 0px 1px #F4F4F4;
+    background: rgba(208, 2, 27, 1);
+    border-radius: 0px;
+}
+.ptp-input-slider[type=range]::-moz-range-thumb {
+    border-radius: 0px;
+    border: 1px solid #F4F4F4;
+    height: 24px;
+    width: 12px;
+    background: rgba(208, 2, 27, 1);
+    cursor: pointer;
+}
+.ptp-input-slider[type=range]::-ms-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+.ptp-input-slider[type=range]::-ms-fill-lower {
+    background: rgba(208, 2, 27, 1);
+    border: 0.2px solid #F4F4F4;
+    box-shadow: 1px 1px 1px #F4F4F4, 0px 0px 1px #F4F4F4;
+}
+.ptp-input-slider[type=range]::-ms-fill-upper {
+    background: rgba(208, 2, 27, 1);
+    border: 0.2px solid #F4F4F4;
+    box-shadow: 1px 1px 1px #F4F4F4, 0px 0px 1px #F4F4F4;
+}
+.ptp-input-slider[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #F4F4F4, 0px 0px 1px #F4F4F4;
+    border: 1px solid #F4F4F4;
+    height: 24px;
+    width: 12px;
+    background: rgba(208, 2, 27, 1);
+    cursor: pointer;
+}
+.ptp-input-slider[type=range]:focus::-ms-fill-lower {
+    background: rgba(208, 2, 27, 1);
+}
+.ptp-input-slider[type=range]:focus::-ms-fill-upper {
+    background: rgba(208, 2, 27, 1);
+}
+
+.ptp-input-slider.vertical {
+    -webkit-transform:rotate(90deg);
+}
+
+
+/* scroll bar styling for webkit browsers */
+.ptp-scroll-bar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.ptp-scroll-bar::-webkit-scrollbar-thumb        {
+    background-color: rgba(255, 255, 255, 0.37);
+    border-radius: 5px;
+}
+
+
+/*
+    More Options Control Panel : Initial State
+    This is the more options panel used in the mobile view.
+*/
+.ptp-more-options-control-panel {
+    position: absolute;
+    top: 0px;
+    background-color: rgba(5,29,64,0.85);
+    z-index: 201;
+    width: 100%;           /* same size as the player window */
+    height: 100%;           /* same size as the player window */
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    flex-direction:column;
+    -webkit-flex-direction:column;
+    -moz-flex-direction:column;
+}
+
+/*
+    More Options Control Panel : Hidden State
+    This is the more options panel used in the mobile view.
+*/
+.ptp-more-options-control-panel.hidden {
+    display: none;
+}
+
+/*
+    More Options Control Panel Menu : Initial State
+    This is the more options panel used in the mobile view.
+*/
+.ptp-more-options-control-panel-menu {
+    height: 100%;
+
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+
+    flex-direction:row;
+    -webkit-flex-direction:row;
+    -moz-flex-direction:row;
+    flex-wrap: wrap;
+}
+
+/*
+    More Options Control Panel Menu Item : Initial State
+    This is the more options panel used in the mobile view.
+*/
+.ptp-more-options-control-panel-menu-item {
+    flex-basis: 32%;
+    -webkit-flex-basis: 32%;
+    -moz-flex-basis: 32%;
+    height: 50%;
+}
+
+/*
+    More Options Control Panel Menu Item : Hover State
+    This is the more options panel used in the mobile view.
+*/
+.ptp-more-options-control-panel-menu-item:hover {
+    cursor: pointer; cursor: hand;
+}
+
+/*
+    Trick Rate Display: Initial State
+    Default styles for the trick rate display component in the control bar.
+*/
+.ptp-control-bar-trick-play-rate {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: -70px;
+    left: calc(100% - 70px);
+    background-color: rgb(77, 77, 77);
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+    color: white;
+}
+
+/*
+    Trick Rate Display: Hidden State
+    Default styles for the trick rate display component in the control bar.
+*/
+.ptp-control-bar-trick-play-rate.hidden {
+    display: none;
+}
+
+/*
+    So when multiview is active, there is an issue where if the CC bubble is active
+   We can't click on the a 4 up cell because the canvas is blocking the mouse events.
+   Since the SDK is putting a class name on the div they are putting the CC text in
+   we are going to turn off mouse events so we can still use the underlying controls.
+*/
+.captionator-cue-canvas {
+    pointer-events: none;
+}
