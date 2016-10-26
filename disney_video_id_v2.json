@@ -1,0 +1,33 @@
+{
+    "entries": [
+ {
+            "id": "vod_003",
+            "title": "Disney Japan Video ID Test",
+            "description": "Demo Movie",
+            "categories": "",
+            "keywords": "",
+            "isLive": false,
+            "content": [
+                {
+                    "format": "M3U8",
+                    "url": "http://d398890tia84ty.cloudfront.net/e2e-vod/cloudfront_vod_hls_tos_30fps.m3u8",
+                    "language": "en"
+                }
+            ],
+            "metadata": {
+                "ad": {
+                    "type": "Primetime Ads",
+                    "details": {
+                        "domain": "auditude.com",
+                        "mediaid": "disneyjapan_test1",
+                        "zoneid": "265509",
+                        "creative-repackaging": true
+                    }
+                },
+               	"network-configuration": {
+                    "native":true
+                    }
+            }
+     }       
+    ]
+}
