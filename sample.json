@@ -57,6 +57,35 @@
                     "native":true
                     }
             }
+     },       
+     {
+            "id": "vod_003",
+            "title": "test3",
+            "description": "Demo Movie2",
+            "categories": "",
+            "keywords": "",
+            "isLive": false,
+            "content": [
+                {
+                    "format": "M3U8",
+                    "url": "http://d398890tia84ty.cloudfront.net/e2e-vod/cloudfront_vod_hls_tos_30fps.m3u8",
+                    "language": "en"
+                }
+            ],
+            "metadata": {
+                "ad": {
+                    "type": "Primetime Ads",
+                    "details": {
+                        "domain": "auditude.com",
+                        "mediaid": "adbe_tearsofsteel2",
+                        "zoneid": "123869",
+                        "creative-repackaging": true
+                    }
+                },
+               	"network-configuration": {
+                    "native":true
+                    }
+            }
      }       
     ]
 }
